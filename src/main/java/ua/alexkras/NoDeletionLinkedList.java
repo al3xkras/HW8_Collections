@@ -111,5 +111,28 @@ public class NoDeletionLinkedList<E> extends AbstractList<E> implements Iterable
         }
     }
 
+    @Override
+    public String toString(){
+        StringBuilder output = new StringBuilder();
+        output.append("NoDeletionLinkedList: ");
+        String bracket1 = "(", bracket2 = ") - ";
 
+        //Node<E> iterateNode = new Node<>(this.iterateNode.prev,
+        //        this.iterateNode.item,
+        //        this.iterateNode.next);
+
+        //this.iterateNode = nodeStart.next;
+
+        for (E e: this){
+            output.append(bracket1);
+            output.append(e);
+            output.append(bracket2);
+        }
+
+        //this.iterateNode=iterateNode;
+
+        output.delete(output.length()-3,output.length()-1);
+
+        return output.toString();
+    }
 }
